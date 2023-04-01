@@ -2,21 +2,29 @@
   <div>
     <span>Diego Full Stack</span>
   </div>
-  <div>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+  <div class="icon">
+    <button mat-icon-button (click)="goSite('https://www.linkedin.com/in/diego-gonzalez-ortiz-64b97b108/')"
+      class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon><svg mat-icon-button xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
+          fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+          <path
+            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+          </path>
+        </svg></mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+
+    <button mat-icon-button (click)="copyUrl()" style="display: flex">
+      <img class="face" src="assets/copy_120015.svg">
+
     </button>
   </div>
 </mat-toolbar>
 
 <div [ngClass]="style">
   <div class="style">
-    <img matTooltip="Change Style" src="/assets/angular-icon.svg" (click)="setStyle('angular')">
-    <img matTooltip="Change Style" src="/assets/spring-icon.svg" (click)="setStyle('spring')">
-    <img matTooltip="Change Style" src="/assets/Postgresql_elephant.svg" (click)="setStyle('postgre')">
+    <img i18n-matTooltip matTooltip="Change Style" src="/assets/angular-icon.svg" (click)="setStyle('angular')">
+    <img i18n-matTooltip matTooltip="Change Style" src="/assets/spring-icon.svg" (click)="setStyle('spring')">
+    <img i18n-matTooltip matTooltip="Change Style" src="/assets/Postgresql_elephant.svg" (click)="setStyle('postgre')">
   </div>
   <div class="content">
     <div class="row">
@@ -32,14 +40,141 @@
     <div class="row">
       <h1 i18n>Technology stack</h1>
       <div class="technologystack">
-        <img *ngFor="let item of technologyStack" src="{{item.img}}" matTooltip="{{item.name}}">
+        <img *ngFor="let item of technologyStack" src="{{item.img}}" matTooltip="{{item.name}}"
+          (click)="openModalExperience(item)">
       </div>
     </div>
-    <div class="row">
+    <div class="row expirience">
       <h1 i18n>Laboral Experience</h1>
 
+      <ngb-carousel [interval]="0">
+        <ng-template ngbSlide>
+          <div class="jobslide">
+            <div>
+              <img class="companylogo" src="assets/logo-header.svg" (click)="goSite('https://qintess.com/en')">
+              <p>(May 2019 – Nov 2022) Analyst programmer</p>
+            </div>
+            <div class="row">
+              <div class="descriptionCompany col-md-12 col-xs-12">
+                During my time at Qintess, I had the opportunity to work with two prestigious clients - Santander Bank
+                and Banco de Chile.
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <div>
+                    <img class="companylogo" matTooltip="more info" src="assets/logo_santander_new.svg" (click)="openModalCompany('santander')">
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                  <div>
+                    <img class="companylogo"  matTooltip="more info" src="assets/bch-inverse.svg" (click)="openModalCompany('bcChile')">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="jobslide">
+            <div>
+              <img class="companylogo" src="assets/stefanini_logo.webp" (click)="goSite('https://stefanini.com/en')">
+            </div>
+            <div class="row">
+              <div class="descriptionCompany col-md-12 col-xs-12">
+                During my time at stefanini, I had the opportunity to work with BNP Paribas Cardif.
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <div>
+                  <img class="companylogo"  matTooltip="more info" src="assets/mobile-logo.png" (click)="openModalCompany('cardif')">
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="jobslide">
+            <div>
+              <img class="companylogo" src="assets/favicon.png">
+            </div>
+            <div class="row">
+              <div class="descriptionCompany col-md-12 col-xs-12">
+                During my time at Alma, I had the privilege of spearheading projects from their inception. I was involved in the decision-making process for the technologies we would use, as well as selecting the servers on which our developments would be deployed. This experience exposed me to the critical aspects of server configuration, the significance of layering, the development of libraries and repositories, and most importantly, it provided me with a comprehensive introduction to working in a professional development environment.
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <button  matTooltip="more info" class="btn btn-primary" (click)="openModalCompany('alma')">Details</button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="jobslide">
+            <div>
+              <h3>NW</h3>
+            </div>
+            <div class="row">
+              <div class="descriptionCompany col-md-12 col-xs-12">
+                Nw was my first company where I worked as a developer, and they provided me with a remarkable opportunity to work full time, even while I was still pursuing my informatics engineering degree in the evenings. During my time there, I worked as a full-stack developer, utilizing a diverse range of technologies such as AngularJS, Java Spring, and PostgreSQL to deliver high-quality solutions.
+This experience was instrumental in developing my skills as a developer, as I was able to gain a deeper understanding of front-end and back-end development, database management, and application integration. Through working on real-world projects and collaborating with talented professionals, I learned how to solve complex problems and deliver exceptional solutions that met and exceeded client expectations.
+Overall, my time at Nw provided me with a solid foundation for my future career, and I am grateful for the opportunity to have worked there.
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <div>
+                  <img  matTooltip="more info" class="companylogo" src="assets/mclogo.svg" (click)="openModalCompany('mundoCredito')">
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
     </div>
 
-  </div>
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        <div class="row education">
+          <h1 i18n>Education</h1>
+          <img class="companylogo" src="assets/2560px-Logo_DuocUC.svg.png">
+          Informatic engineer 2015 - 2018
+        </div>
+        <div class="row education">
+          <img class="companylogo" src="assets/GCLC_logo_website_gold_coast_learning_centre_.png">
+          General English course 2022-2023
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <h1 i18n>Soft skills</h1>
+        <mat-list-item>
+          <div matListItemLine>Problem-solving</div>
+          <div matListItemLine>Attention to detail</div>
+          <div matListItemLine>Creativity</div>
+          <div matListItemLine>Adaptability</div>
+          <div matListItemLine>Teamwork</div>
+          <div matListItemLine>Continuous learning</div>
+        </mat-list-item>
+      </div>
 
+
+
+    </div>
+    <div class="row contact">
+      <h1 i18n>Contact</h1>
+      <mat-list>
+        <mat-list-item>
+          <mat-icon matListItemIcon>email</mat-icon>
+          <div matListItemTitle>Email:</div>
+          <div matListItemLine>diego.gonzalez.ortiz@gmail.com</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon>phone</mat-icon>
+          <div matListItemTitle>Phone</div>
+          <div matListItemLine>+61 450602990</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon matListItemIcon style="color: green;">phone</mat-icon>
+          <div matListItemTitle>Whatsapp:</div>
+          <div matListItemLine>+56 9 45936098</div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
 </div>

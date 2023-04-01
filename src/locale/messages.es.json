@@ -33,11 +33,15 @@
     "ngb.timepicker.decrement-seconds": "Decrement seconds",
     "ngb.timepicker.PM": "{$INTERPOLATION}",
     "ngb.timepicker.AM": "{$INTERPOLATION}",
+    "1982547114032807367": "Cambiar estilo",
     "6389087838012471451": "Bienvenidos!!!",
     "8655209680827734721": "Soy Diego ",
-    "407722552315847639": "Un programador Full stack y con experiencia en front end",
+    "407722552315847639": "Un programador Full stack, especializado en el FrontEnd",
     "4839309338424928166": "Tecnologias",
     "9049849393230692879": "Experiencia laboral",
-    "1991032133276498382": "He sido programador Angular por casi 5 años"
+    "4900915828286562601": "Angular es mi principal framework de desarrollo actualmente es con el que mas confianza tengo ya que he estado involucrado con el desde 2017, comenzando con AngularJs, luego aprendiendo y realizando proyectos con Angular 4, luego de estuve trabajando con aplicaciones mobiles de Angular+Ionic, para mis ultimos años trabajar en proyectos con Angular 11 y 14.",
+    "5692392901960412560": "Spring este framework al cual le tengo mucho cariño y deseo volver a trabajar con el, mi historia con el es principalmente entre 2017 y mediados de 2019, fue uno de los frameworks con los que me inicie en el mundo de la programacion, realizando un proyecto de venta de seguros automotrices, luego un proyecto de hoteleria y lo ultimo un servicio proxy.",
+    "2822477857438554991": "PostgreSQL fue la base de datos con la que inicie en el mundo laboral, he hecho modelos de base y procedimientos de almacenados y consultas sencillas esta la estuve trabajando por aproximadamente 2 años entre 2017 y 2019.",
+    "6491843380723515267": "Git para mi ha sido una herramienta que he utilizado desde 2017, hoy en dia no puedo pensar en crear un proyecto sin utilizarlo, lo he usado tanto con bitcucket, github y gitlab. He creado repositorios he hecho nuevas ramas, suelo seguir un gitflow, he hecho pull y merge request entre otras tantas opciones que git ofrece."
   }
 }

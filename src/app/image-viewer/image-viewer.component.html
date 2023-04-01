@@ -1,0 +1,5 @@
+<ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" [interval]="5000">
+  <ng-template ngbSlide *ngFor="let item of data.images">
+    <img src="{{item}}">
+  </ng-template>
+</ngb-carousel>
