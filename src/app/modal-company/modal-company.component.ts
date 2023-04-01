@@ -21,22 +21,22 @@ export class ModalSantanderComponent {
     switch (this.data) {
       case 'santander':
         images = [
-          '/assets/santander/IMG-20191122-WA0004.jpg',
-          '/assets/santander/IMG-20210507-WA0038.jpg',
-          '/assets/santander/IMG-20210623-WA0023.jpg',
-          '/assets/santander/IMG-20210727-WA0013.jpg',
-          '/assets/santander/IMG-20210813-WA0010.jpg',
+          'assets/santander/IMG-20191122-WA0004.jpg',
+          'assets/santander/IMG-20210507-WA0038.jpg',
+          'assets/santander/IMG-20210623-WA0023.jpg',
+          'assets/santander/IMG-20210727-WA0013.jpg',
+          'assets/santander/IMG-20210813-WA0010.jpg',
         ];
       break;
       case 'cardif':
         images = [
-          '/assets/Cardif/1.png',
-          '/assets/Cardif/2.png',
-          '/assets/Cardif/3.png',
-          '/assets/Cardif/4.png',
-          '/assets/Cardif/5.png',
-          '/assets/Cardif/6.png',
-          '/assets/Cardif/7.png',
+          'assets/Cardif/1.png',
+          'assets/Cardif/2.png',
+          'assets/Cardif/3.png',
+          'assets/Cardif/4.png',
+          'assets/Cardif/5.png',
+          'assets/Cardif/6.png',
+          'assets/Cardif/7.png',
         ];
       break;
     }
