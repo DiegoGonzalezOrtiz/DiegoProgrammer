@@ -3,8 +3,9 @@
     <span>Diego Full Stack</span>
   </div>
   <div class="icon">
-    <button mat-icon-button (click)="goSite('https://www.linkedin.com/in/diego-gonzalez-ortiz-64b97b108/')"
-      class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <button matTooltip="Go to my linkedin" mat-icon-button
+      (click)="goSite('https://www.linkedin.com/in/diego-gonzalez-ortiz-64b97b108/')" class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
       <mat-icon><svg mat-icon-button xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
           fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
           <path
@@ -13,7 +14,13 @@
         </svg></mat-icon>
     </button>
 
-    <button mat-icon-button (click)="copyUrl()" style="display: flex">
+    <button matTooltip="Go to my GitHub" mat-icon-button (click)="goSite('https://github.com/DiegoGonzalezOrtiz')"
+      style="display: flex">
+      <img class="face" src="assets/git.svg">
+
+    </button>
+
+    <button matTooltip="Copy my profile url" mat-icon-button (click)="copyUrl()" style="display: flex">
       <img class="face" src="assets/copy_120015.svg">
 
     </button>
@@ -33,8 +40,17 @@
         <h2 i18n>I'm Diego </h2>
         <h3 i18n>I'm a Full stack developer with a strong focus in th e front</h3>
       </div>
-      <div class=" col-md-8 col-xs-12">
+      <div class=" col-md-2 col-xs-12">
         <img class="face" src="assets/IMG_20230224_121843.jpg">
+      </div>
+      <div class=" col-md-6 col-xs-12" style="padding: 20px">
+        <p>As a 26-year-old man, I've had a lifelong passion for computers and technology, which was first ignited by my
+          love of video games. This led me to pursue a career in development, and I have been continually growing and
+          improving my skills in this field.</p>
+        <p>Last year, I made the move to the Gold Coast to immerse myself in an English-speaking environment and further
+          enhance my language skills. Additionally, I have been prioritizing my health and wellness by engaging in
+          regular physical activity, as I believe that a healthy body and mind are essential for a successful and
+          fulfilling life.</p>
       </div>
     </div>
     <div class="row">
@@ -56,18 +72,26 @@
             </div>
             <div class="row">
               <div class="descriptionCompany col-md-12 col-xs-12">
-                During my time at Qintess, I had the opportunity to work with two prestigious clients - Santander Bank
-                and Banco de Chile.
+                During my tenure at Qintess, I was privileged to work with two esteemed clients - Santander Bank and
+                Banco de Chile. I was entrusted with the role of Technical Lead for the Payment Ways team, where I was
+                responsible for overseeing the development of key front-end solutions for these clients. As the main
+                front-end developer, I was able to leverage my technical skills and expertise to create innovative and
+                effective solutions that met the unique needs of our clients. Working with these two prestigious
+                organizations gave me a newfound sense of confidence, and I was able to develop a deeper understanding
+                of the complex technical challenges facing the financial industry. Overall, my time at Qintess was a
+                transformative experience that allowed me to hone my skills and grow both personally and professionally.
               </div>
               <div class="row">
                 <div class="col-md-6 col-xs-12">
                   <div>
-                    <img class="companylogo" matTooltip="more info" src="assets/logo_santander_new.svg" (click)="openModalCompany('santander')">
+                    <img class="companylogo" width="250px" matTooltip="more info" src="assets/logo_santander_new.svg"
+                      (click)="openModalCompany('santander')">
                   </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                   <div>
-                    <img class="companylogo"  matTooltip="more info" src="assets/bch-inverse.svg" (click)="openModalCompany('bcChile')">
+                    <img class="companylogo" width="250px" matTooltip="more info" src="assets/bch-inverse.svg"
+                      (click)="openModalCompany('bcChile')">
                   </div>
                 </div>
               </div>
@@ -79,14 +103,22 @@
           <div class="jobslide">
             <div>
               <img class="companylogo" src="assets/stefanini_logo.webp" (click)="goSite('https://stefanini.com/en')">
+              <p>(July 2018 – April 2019) Analyst programmer</p>
             </div>
             <div class="row">
               <div class="descriptionCompany col-md-12 col-xs-12">
                 During my time at stefanini, I had the opportunity to work with BNP Paribas Cardif.
+                <p>In Cardif, I had an exceptional opportunity to grow professionally by working alongside experienced
+                  architects who willingly shared their knowledge with me. Their mentorship proved invaluable as I
+                  tackled complex projects, applying the skills and best practices that I learned from them. Their
+                  guidance and support helped me achieve significant milestones in my work, and I am grateful for the
+                  chance to learn from them. Overall, my experience at Cardif was a catalyst for my professional growth
+                  and development, and it helped me become a more skilled and knowledgeable professional.</p>
               </div>
               <div class="col-md-6 col-xs-12">
                 <div>
-                  <img class="companylogo"  matTooltip="more info" src="assets/mobile-logo.png" (click)="openModalCompany('cardif')">
+                  <img class="companylogo" width="250px" matTooltip="more info" src="assets/mobile-logo.png"
+                    (click)="openModalCompany('cardif')">
                 </div>
               </div>
             </div>
@@ -96,13 +128,20 @@
           <div class="jobslide">
             <div>
               <img class="companylogo" src="assets/favicon.png">
+              <p>(October 2017 – July 2018) Analyst programmer</p>
             </div>
             <div class="row">
               <div class="descriptionCompany col-md-12 col-xs-12">
-                During my time at Alma, I had the privilege of spearheading projects from their inception. I was involved in the decision-making process for the technologies we would use, as well as selecting the servers on which our developments would be deployed. This experience exposed me to the critical aspects of server configuration, the significance of layering, the development of libraries and repositories, and most importantly, it provided me with a comprehensive introduction to working in a professional development environment.
+                During my time at Alma, I had the privilege of spearheading projects from their inception. I was
+                involved in the decision-making process for the technologies we would use, as well as selecting the
+                servers on which our developments would be deployed. This experience exposed me to the critical aspects
+                of server configuration, the significance of layering, the development of libraries and repositories,
+                and most importantly, it provided me with a comprehensive introduction to working in a professional
+                development environment.
               </div>
               <div class="col-md-6 col-xs-12">
-                <button  matTooltip="more info" class="btn btn-primary" (click)="openModalCompany('alma')">Details</button>
+                <button matTooltip="more info" class="btn btn-primary"
+                  (click)="openModalCompany('alma')">Details</button>
               </div>
             </div>
           </div>
@@ -111,16 +150,25 @@
           <div class="jobslide">
             <div>
               <h3>NW</h3>
+              <p>(January 2017 – October 2017) Analyst programmer</p>
             </div>
             <div class="row">
               <div class="descriptionCompany col-md-12 col-xs-12">
-                Nw was my first company where I worked as a developer, and they provided me with a remarkable opportunity to work full time, even while I was still pursuing my informatics engineering degree in the evenings. During my time there, I worked as a full-stack developer, utilizing a diverse range of technologies such as AngularJS, Java Spring, and PostgreSQL to deliver high-quality solutions.
-This experience was instrumental in developing my skills as a developer, as I was able to gain a deeper understanding of front-end and back-end development, database management, and application integration. Through working on real-world projects and collaborating with talented professionals, I learned how to solve complex problems and deliver exceptional solutions that met and exceeded client expectations.
-Overall, my time at Nw provided me with a solid foundation for my future career, and I am grateful for the opportunity to have worked there.
+                Nw was my first company where I worked as a developer, and they provided me with a remarkable
+                opportunity to work full time, even while I was still pursuing my informatics engineering degree in the
+                evenings. During my time there, I worked as a full-stack developer, utilizing a diverse range of
+                technologies such as AngularJS, Java Spring, and PostgreSQL to deliver high-quality solutions.
+                This experience was instrumental in developing my skills as a developer, as I was able to gain a deeper
+                understanding of front-end and back-end development, database management, and application integration.
+                Through working on real-world projects and collaborating with talented professionals, I learned how to
+                solve complex problems and deliver exceptional solutions that met and exceeded client expectations.
+                Overall, my time at Nw provided me with a solid foundation for my future career, and I am grateful for
+                the opportunity to have worked there.
               </div>
               <div class="col-md-6 col-xs-12">
                 <div>
-                  <img  matTooltip="more info" class="companylogo" src="assets/mclogo.svg" (click)="openModalCompany('mundoCredito')">
+                  <img matTooltip="more info" width="250px" class="companylogo" src="assets/mclogo.svg"
+                    (click)="openModalCompany('mundoCredito')">
                 </div>
               </div>
             </div>
@@ -152,9 +200,6 @@ Overall, my time at Nw provided me with a solid foundation for my future career,
           <div matListItemLine>Continuous learning</div>
         </mat-list-item>
       </div>
-
-
-
     </div>
     <div class="row contact">
       <h1 i18n>Contact</h1>
@@ -175,6 +220,9 @@ Overall, my time at Nw provided me with a solid foundation for my future career,
           <div matListItemLine>+56 9 45936098</div>
         </mat-list-item>
       </mat-list>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <p>If you have any recommendations for how I can further improve my website, I would be grateful to hear them. I am always looking for ways to enhance the user experience and make my website even better. Any feedback you can provide would be greatly appreciated. Thank you in advance for your suggestions!</p>
     </div>
   </div>
 </div>

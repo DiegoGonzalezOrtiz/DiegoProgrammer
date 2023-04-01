@@ -22,7 +22,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize": [
-              "es-PR"
+              "en-US"
             ],
             "outputPath": "dist/diego-angular",
             "index": "src/index.html",
