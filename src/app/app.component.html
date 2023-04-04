@@ -1,228 +1,239 @@
-<mat-toolbar class="header">
-  <div>
-    <span>Diego Full Stack</span>
-  </div>
-  <div class="icon">
-    <button matTooltip="Go to my linkedin" mat-icon-button
-      (click)="goSite('https://www.linkedin.com/in/diego-gonzalez-ortiz-64b97b108/')" class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon">
-      <mat-icon><svg mat-icon-button xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24"
-          fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
-          <path
-            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
-          </path>
-        </svg></mat-icon>
-    </button>
 
-    <button matTooltip="Go to my GitHub" mat-icon-button (click)="goSite('https://github.com/DiegoGonzalezOrtiz')"
-      style="display: flex">
-      <img class="face" src="assets/git.svg">
-
-    </button>
-
-    <button matTooltip="Copy my profile url" mat-icon-button (click)="copyUrl()" style="display: flex">
-      <img class="face" src="assets/copy_120015.svg">
-
-    </button>
-  </div>
-</mat-toolbar>
-
-<div [ngClass]="style">
-  <div class="style">
-    <img i18n-matTooltip matTooltip="Change Style" src="assets/angular-icon.svg" (click)="setStyle('angular')">
-    <img i18n-matTooltip matTooltip="Change Style" src="assets/spring-icon.svg" (click)="setStyle('spring')">
-    <img i18n-matTooltip matTooltip="Change Style" src="assets/Postgresql_elephant.svg" (click)="setStyle('postgre')">
-  </div>
-  <div class="content">
-    <div class="row">
-      <div class="text col-md-4 col-xs-12">
-        <h1 i18n>Welcome!!!</h1>
-        <h2 i18n>I'm Diego </h2>
-        <h3 i18n>I'm a Full stack developer with a strong focus in th e front</h3>
-      </div>
-      <div class=" col-md-2 col-xs-12">
-        <img class="face" src="assets/IMG_20230224_121843.jpg">
-      </div>
-      <div class=" col-md-6 col-xs-12" style="padding: 20px">
-        <p>As a 26-year-old man, I've had a lifelong passion for computers and technology, which was first ignited by my
-          love of video games. This led me to pursue a career in development, and I have been continually growing and
-          improving my skills in this field.</p>
-        <p>Last year, I made the move to the Gold Coast to immerse myself in an English-speaking environment and further
-          enhance my language skills. Additionally, I have been prioritizing my health and wellness by engaging in
-          regular physical activity, as I believe that a healthy body and mind are essential for a successful and
-          fulfilling life.</p>
-      </div>
+  <mat-toolbar class="header">
+    <div>
+      <span>Diego Full Stack</span>
     </div>
-    <div class="row">
-      <h1 i18n>Technology stack</h1>
-      <div class="technologystack">
-        <img *ngFor="let item of technologyStack" src="{{item.img}}" matTooltip="{{item.name}}"
-          (click)="openModalExperience(item)">
-      </div>
-    </div>
-    <div class="row expirience">
-      <h1 i18n>Laboral Experience</h1>
+    <div class="icon">
+        <button matTooltip="Go to my linkedin" mat-icon-button
+          (click)="goSite('https://www.linkedin.com/in/diego-gonzalez-ortiz-64b97b108/')"
+          class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon><svg mat-icon-button xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24"
+              focusable="false">
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+              </path>
+            </svg></mat-icon>
+        </button>
 
-      <ngb-carousel [interval]="0">
-        <ng-template ngbSlide>
-          <div class="jobslide">
-            <div>
-              <img class="companylogo" src="assets/logo-header.svg" (click)="goSite('https://qintess.com/en')">
-              <p>(May 2019 – Nov 2022) Analyst programmer</p>
-            </div>
-            <div class="row">
-              <div class="descriptionCompany col-md-12 col-xs-12">
-                During my tenure at Qintess, I was privileged to work with two esteemed clients - Santander Bank and
-                Banco de Chile. I was entrusted with the role of Technical Lead for the Payment Ways team, where I was
-                responsible for overseeing the development of key front-end solutions for these clients. As the main
-                front-end developer, I was able to leverage my technical skills and expertise to create innovative and
-                effective solutions that met the unique needs of our clients. Working with these two prestigious
-                organizations gave me a newfound sense of confidence, and I was able to develop a deeper understanding
-                of the complex technical challenges facing the financial industry. Overall, my time at Qintess was a
-                transformative experience that allowed me to hone my skills and grow both personally and professionally.
+        <button matTooltip="Go to my GitHub" mat-icon-button (click)="goSite('https://github.com/DiegoGonzalezOrtiz')"
+          style="display: flex">
+          <img class="face" src="assets/git.svg">
+
+        </button>
+
+        <button matTooltip="Copy my profile url" mat-icon-button (click)="copyUrl()" style="display: flex">
+          <img class="face" src="assets/copy_120015.svg">
+        </button>
+      </div>
+  </mat-toolbar>
+
+  <div [ngClass]="style">
+    <div class="style">
+      <img i18n-matTooltip matTooltip="Change Style" src="assets/angular-icon.svg" (click)="setStyle('angular')">
+      <img i18n-matTooltip matTooltip="Change Style" src="assets/spring-icon.svg" (click)="setStyle('spring')">
+      <img i18n-matTooltip matTooltip="Change Style" src="assets/Postgresql_elephant.svg" (click)="setStyle('postgre')">
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="text col-xxl-4 col-xl-12">
+          <h1 i18n>Welcome!!!</h1>
+          <h2 i18n>I'm Diego </h2>
+          <h3 i18n>I'm a Full stack developer with a strong focus in the front end</h3>
+        </div>
+        <div class=" col-xxl-2 col-xl-12">
+          <img class="face" src="assets/IMG_20230224_121843.jpg">
+        </div>
+        <div class=" col-xxl-6 col-xl-12" style="padding: 20px">
+          <p>As a 26-year-old man, I've had a lifelong passion for computers and technology, which was first ignited by
+            my
+            love of video games. This led me to pursue a career in development, and I have been continually growing and
+            improving my skills in this field.</p>
+          <p>Last year, I made the move to the Gold Coast to immerse myself in an English-speaking environment and
+            further
+            enhance my language skills. Additionally, I have been prioritizing my health and wellness by engaging in
+            regular physical activity, as I believe that a healthy body and mind are essential for a successful and
+            fulfilling life.</p>
+        </div>
+      </div>
+      <div class="row">
+        <h1 i18n>Technology stack</h1>
+        <div class="technologystack">
+          <img *ngFor="let item of technologyStack" src="{{item.img}}" matTooltip="{{item.name}}"
+            (click)="openModalExperience(item)">
+        </div>
+      </div>
+      <div class="row expirience">
+        <h1 i18n>Laboral Experience</h1>
+
+        <ngb-carousel [interval]="0">
+          <ng-template ngbSlide>
+            <div class="jobslide">
+              <div>
+                <img class="companylogo" src="assets/logo-header.svg" (click)="goSite('https://qintess.com/en')">
+                <p>(May 2019 – Nov 2022) Analyst programmer</p>
               </div>
               <div class="row">
-                <div class="col-md-6 col-xs-12">
-                  <div>
-                    <img class="companylogo" width="250px" matTooltip="more info" src="assets/logo_santander_new.svg"
-                      (click)="openModalCompany('santander')">
+                <div class="descriptionCompany col-xxl-12 col-xl-12">
+                  During my tenure at Qintess, I was privileged to work with two esteemed clients - Santander Bank and
+                  Banco de Chile. I was entrusted with the role of Technical Lead for the Payment Ways team, where I was
+                  responsible for overseeing the development of key front-end solutions for these clients. As the main
+                  front-end developer, I was able to leverage my technical skills and expertise to create innovative and
+                  effective solutions that met the unique needs of our clients. Working with these two prestigious
+                  organizations gave me a newfound sense of confidence, and I was able to develop a deeper understanding
+                  of the complex technical challenges facing the financial industry. Overall, my time at Qintess was a
+                  transformative experience that allowed me to hone my skills and grow both personally and
+                  professionally.
+                </div>
+                <div class="row">
+                  <div class="col-xxl-6 col-xl-12">
+                    <div>
+                      <img class="companylogo" width="250px" matTooltip="more info" src="assets/logo_santander_new.svg"
+                        (click)="openModalCompany('santander')">
+                    </div>
+                  </div>
+                  <div class="col-xxl-6 col-xl-12">
+                    <div>
+                      <img class="companylogo" width="250px" matTooltip="more info" src="assets/bch-inverse.svg"
+                        (click)="openModalCompany('bcChile')">
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-xs-12">
+              </div>
+            </div>
+
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="jobslide">
+              <div>
+                <img class="companylogo" src="assets/stefanini_logo.webp" (click)="goSite('https://stefanini.com/en')">
+                <p>(July 2018 – April 2019) Analyst programmer</p>
+              </div>
+              <div class="row">
+                <div class="descriptionCompany col-xxl-12 col-xl-12">
+                  During my time at stefanini, I had the opportunity to work with BNP Paribas Cardif.
+                  <p>In Cardif, I had an exceptional opportunity to grow professionally by working alongside experienced
+                    architects who willingly shared their knowledge with me. Their mentorship proved invaluable as I
+                    tackled complex projects, applying the skills and best practices that I learned from them. Their
+                    guidance and support helped me achieve significant milestones in my work, and I am grateful for the
+                    chance to learn from them. Overall, my experience at Cardif was a catalyst for my professional
+                    growth
+                    and development, and it helped me become a more skilled and knowledgeable professional.</p>
+                </div>
+                <div class="col-xxl-6 col-xl-12">
                   <div>
-                    <img class="companylogo" width="250px" matTooltip="more info" src="assets/bch-inverse.svg"
-                      (click)="openModalCompany('bcChile')">
+                    <img class="companylogo" width="250px" matTooltip="more info" src="assets/mobile-logo.png"
+                      (click)="openModalCompany('cardif')">
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="jobslide">
-            <div>
-              <img class="companylogo" src="assets/stefanini_logo.webp" (click)="goSite('https://stefanini.com/en')">
-              <p>(July 2018 – April 2019) Analyst programmer</p>
-            </div>
-            <div class="row">
-              <div class="descriptionCompany col-md-12 col-xs-12">
-                During my time at stefanini, I had the opportunity to work with BNP Paribas Cardif.
-                <p>In Cardif, I had an exceptional opportunity to grow professionally by working alongside experienced
-                  architects who willingly shared their knowledge with me. Their mentorship proved invaluable as I
-                  tackled complex projects, applying the skills and best practices that I learned from them. Their
-                  guidance and support helped me achieve significant milestones in my work, and I am grateful for the
-                  chance to learn from them. Overall, my experience at Cardif was a catalyst for my professional growth
-                  and development, and it helped me become a more skilled and knowledgeable professional.</p>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="jobslide">
+              <div>
+                <img class="companylogo" src="assets/favicon.png">
+                <p>(October 2017 – July 2018) Analyst programmer</p>
               </div>
-              <div class="col-md-6 col-xs-12">
-                <div>
-                  <img class="companylogo" width="250px" matTooltip="more info" src="assets/mobile-logo.png"
-                    (click)="openModalCompany('cardif')">
+              <div class="row">
+                <div class="descriptionCompany col-xxl-12 col-xl-12">
+                  During my time at Alma, I had the privilege of spearheading projects from their inception. I was
+                  involved in the decision-making process for the technologies we would use, as well as selecting the
+                  servers on which our developments would be deployed. This experience exposed me to the critical
+                  aspects
+                  of server configuration, the significance of layering, the development of libraries and repositories,
+                  and most importantly, it provided me with a comprehensive introduction to working in a professional
+                  development environment.
+                </div>
+                <div class="col-xxl-6 col-xl-12">
+                  <button matTooltip="more info" class="btn btn-primary"
+                    (click)="openModalCompany('alma')">Details</button>
                 </div>
               </div>
             </div>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="jobslide">
-            <div>
-              <img class="companylogo" src="assets/favicon.png">
-              <p>(October 2017 – July 2018) Analyst programmer</p>
-            </div>
-            <div class="row">
-              <div class="descriptionCompany col-md-12 col-xs-12">
-                During my time at Alma, I had the privilege of spearheading projects from their inception. I was
-                involved in the decision-making process for the technologies we would use, as well as selecting the
-                servers on which our developments would be deployed. This experience exposed me to the critical aspects
-                of server configuration, the significance of layering, the development of libraries and repositories,
-                and most importantly, it provided me with a comprehensive introduction to working in a professional
-                development environment.
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="jobslide">
+              <div>
+                <h3>NW</h3>
+                <p>(January 2017 – October 2017) Analyst programmer</p>
               </div>
-              <div class="col-md-6 col-xs-12">
-                <button matTooltip="more info" class="btn btn-primary"
-                  (click)="openModalCompany('alma')">Details</button>
-              </div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="jobslide">
-            <div>
-              <h3>NW</h3>
-              <p>(January 2017 – October 2017) Analyst programmer</p>
-            </div>
-            <div class="row">
-              <div class="descriptionCompany col-md-12 col-xs-12">
-                Nw was my first company where I worked as a developer, and they provided me with a remarkable
-                opportunity to work full time, even while I was still pursuing my informatics engineering degree in the
-                evenings. During my time there, I worked as a full-stack developer, utilizing a diverse range of
-                technologies such as AngularJS, Java Spring, and PostgreSQL to deliver high-quality solutions.
-                This experience was instrumental in developing my skills as a developer, as I was able to gain a deeper
-                understanding of front-end and back-end development, database management, and application integration.
-                Through working on real-world projects and collaborating with talented professionals, I learned how to
-                solve complex problems and deliver exceptional solutions that met and exceeded client expectations.
-                Overall, my time at Nw provided me with a solid foundation for my future career, and I am grateful for
-                the opportunity to have worked there.
-              </div>
-              <div class="col-md-6 col-xs-12">
-                <div>
-                  <img matTooltip="more info" width="250px" class="companylogo" src="assets/mclogo.svg"
-                    (click)="openModalCompany('mundoCredito')">
+              <div class="row">
+                <div class="descriptionCompany col-xxl-12 col-xl-12">
+                  Nw was my first company where I worked as a developer, and they provided me with a remarkable
+                  opportunity to work full time, even while I was still pursuing my informatics engineering degree in
+                  the
+                  evenings. During my time there, I worked as a full-stack developer, utilizing a diverse range of
+                  technologies such as AngularJS, Java Spring, and PostgreSQL to deliver high-quality solutions.
+                  This experience was instrumental in developing my skills as a developer, as I was able to gain a
+                  deeper
+                  understanding of front-end and back-end development, database management, and application integration.
+                  Through working on real-world projects and collaborating with talented professionals, I learned how to
+                  solve complex problems and deliver exceptional solutions that met and exceeded client expectations.
+                  Overall, my time at Nw provided me with a solid foundation for my future career, and I am grateful for
+                  the opportunity to have worked there.
+                </div>
+                <div class="col-xxl-6 col-xl-12">
+                  <div>
+                    <img matTooltip="more info" width="250px" class="companylogo" src="assets/mclogo.svg"
+                      (click)="openModalCompany('mundoCredito')">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </ng-template>
-      </ngb-carousel>
-    </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
 
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-        <div class="row education">
-          <h1 i18n>Education</h1>
-          <img class="companylogo" src="assets/2560px-Logo_DuocUC.svg.png">
-          Informatic engineer 2015 - 2018
+      <div class="row">
+        <div class="col-xxl-6 col-xl-12">
+          <div class="row education">
+            <h1 i18n>Education</h1>
+            <img class="companylogo" src="assets/2560px-Logo_DuocUC.svg.png">
+            Informatic engineer 2015 - 2018
+          </div>
+          <div class="row education">
+            <img class="companylogo" src="assets/GCLC_logo_website_gold_coast_learning_centre_.png">
+            General English course 2022-2023
+          </div>
         </div>
-        <div class="row education">
-          <img class="companylogo" src="assets/GCLC_logo_website_gold_coast_learning_centre_.png">
-          General English course 2022-2023
+        <div class="col-xxl-6 col-xl-12">
+          <h1 i18n>Soft skills</h1>
+          <mat-list-item>
+            <div matListItemLine>Problem-solving</div>
+            <div matListItemLine>Attention to detail</div>
+            <div matListItemLine>Creativity</div>
+            <div matListItemLine>Adaptability</div>
+            <div matListItemLine>Teamwork</div>
+            <div matListItemLine>Continuous learning</div>
+          </mat-list-item>
         </div>
       </div>
-      <div class="col-md-6 col-xs-12">
-        <h1 i18n>Soft skills</h1>
-        <mat-list-item>
-          <div matListItemLine>Problem-solving</div>
-          <div matListItemLine>Attention to detail</div>
-          <div matListItemLine>Creativity</div>
-          <div matListItemLine>Adaptability</div>
-          <div matListItemLine>Teamwork</div>
-          <div matListItemLine>Continuous learning</div>
-        </mat-list-item>
+      <div class="row contact">
+        <h1 i18n>Contact</h1>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>email</mat-icon>
+            <div matListItemTitle>Email:</div>
+            <div matListItemLine>diego.gonzalez.ortiz@gmail.com</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>phone</mat-icon>
+            <div matListItemTitle>Phone</div>
+            <div matListItemLine>+61 450602990</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon style="color: green;">phone</mat-icon>
+            <div matListItemTitle>Whatsapp:</div>
+            <div matListItemLine>+56 9 45936098</div>
+          </mat-list-item>
+        </mat-list>
       </div>
-    </div>
-    <div class="row contact">
-      <h1 i18n>Contact</h1>
-      <mat-list>
-        <mat-list-item>
-          <mat-icon matListItemIcon>email</mat-icon>
-          <div matListItemTitle>Email:</div>
-          <div matListItemLine>diego.gonzalez.ortiz@gmail.com</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon>phone</mat-icon>
-          <div matListItemTitle>Phone</div>
-          <div matListItemLine>+61 450602990</div>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon matListItemIcon style="color: green;">phone</mat-icon>
-          <div matListItemTitle>Whatsapp:</div>
-          <div matListItemLine>+56 9 45936098</div>
-        </mat-list-item>
-      </mat-list>
-    </div>
-    <div style="display: flex; justify-content: center;">
-      <p>If you have any recommendations for how I can further improve my website, I would be grateful to hear them. I am always looking for ways to enhance the user experience and make my website even better. Any feedback you can provide would be greatly appreciated. Thank you in advance for your suggestions!</p>
+      <div style="display: flex; justify-content: center;">
+        <p>If you have any recommendations for how I can further improve my website, I would be grateful to hear them. I
+          am always looking for ways to enhance the user experience and make my website even better. Any feedback you
+          can
+          provide would be greatly appreciated. Thank you in advance for your suggestions!</p>
+      </div>
     </div>
   </div>
-</div>
