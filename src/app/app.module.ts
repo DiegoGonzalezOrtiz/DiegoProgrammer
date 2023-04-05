@@ -18,13 +18,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ModalExperienceComponent } from './modal-experience/modal-experience.component';
 import { ModalSantanderComponent } from './modal-company/modal-company.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { ModalInfoComponent } from './modal-info/modal-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModalExperienceComponent,
     ModalSantanderComponent,
-    ImageViewerComponent
+    ImageViewerComponent,
+    ModalInfoComponent
   ],
   imports: [
     BrowserModule,

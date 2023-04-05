@@ -4,7 +4,7 @@
       <span>Diego Full Stack</span>
     </div>
     <div class="icon">
-        <button matTooltip="Go to my linkedin" mat-icon-button
+        <button [ngClass]="light" matTooltip="Go to my linkedin" mat-icon-button
           (click)="goSite('https://www.linkedin.com/in/diego-gonzalez-ortiz-64b97b108/')"
           class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
           <mat-icon><svg mat-icon-button xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -16,13 +16,13 @@
             </svg></mat-icon>
         </button>
 
-        <button matTooltip="Go to my GitHub" mat-icon-button (click)="goSite('https://github.com/DiegoGonzalezOrtiz')"
+        <button [ngClass]="light" matTooltip="Go to my GitHub" mat-icon-button (click)="goSite('https://github.com/DiegoGonzalezOrtiz')"
           style="display: flex">
           <img class="face" src="assets/git.svg">
 
         </button>
 
-        <button matTooltip="Copy my profile url" mat-icon-button (click)="copyUrl()" style="display: flex">
+        <button [ngClass]="light" matTooltip="Copy my profile url" mat-icon-button (click)="copyUrl()" style="display: flex">
           <img class="face" src="assets/copy_120015.svg">
         </button>
       </div>
@@ -30,9 +30,9 @@
 
   <div [ngClass]="style">
     <div class="style">
-      <img i18n-matTooltip matTooltip="Change Style" src="assets/angular-icon.svg" (click)="setStyle('angular')">
-      <img i18n-matTooltip matTooltip="Change Style" src="assets/spring-icon.svg" (click)="setStyle('spring')">
-      <img i18n-matTooltip matTooltip="Change Style" src="assets/Postgresql_elephant.svg" (click)="setStyle('postgre')">
+      <img [ngClass]="light" i18n-matTooltip matTooltip="Change Style" src="assets/angular-icon.svg" (click)="setStyle('angular')">
+      <img [ngClass]="light" i18n-matTooltip matTooltip="Change Style" src="assets/spring-icon.svg" (click)="setStyle('spring')">
+      <img [ngClass]="light" i18n-matTooltip matTooltip="Change Style" src="assets/Postgresql_elephant.svg" (click)="setStyle('postgre')">
     </div>
     <div class="content">
       <div class="row">
@@ -59,7 +59,7 @@
       <div class="row">
         <h1 i18n>Technology stack</h1>
         <div class="technologystack">
-          <img *ngFor="let item of technologyStack" src="{{item.img}}" matTooltip="{{item.name}}"
+          <img [ngClass]="light" *ngFor="let item of technologyStack" src="{{item.img}}" matTooltip="{{item.name}}"
             (click)="openModalExperience(item)">
         </div>
       </div>

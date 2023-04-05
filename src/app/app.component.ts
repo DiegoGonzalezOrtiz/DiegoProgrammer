@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ModalExperienceComponent } from './modal-experience/modal-experience.component';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { ModalSantanderComponent } from './modal-company/modal-company.component';
+import { ModalInfoComponent } from './modal-info/modal-info.component';
 
 @Component({
   selector: 'app-root',
@@ -66,10 +67,23 @@ export class AppComponent {
     },
 
   ];
+  light='';
   constructor(
     private dialog: MatDialog,
     private clipboard: Clipboard
-  ) { }
+  ) {
+    let f = localStorage.getItem('firstTime');
+    console.log(f);
+    if (!f){
+      this.light='light';
+      let config = new MatDialogConfig();
+      config.maxHeight = '600px';
+      const dialogRef = this.dialog.open(ModalInfoComponent, config);
+      dialogRef.afterClosed().subscribe(result => this.light='');
+      localStorage.setItem('firstTime','true');
+    }
+
+  }
 
 
   setStyle(style: string) {
